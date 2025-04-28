@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practica - TANTEMA</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-17SDCHQMC8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-17SDCHQMC8');
+  </script>
+</head>
+<body>
+  <div>
+    <main>
+      <header>
+        <!--h1>Practica</h1>
+        <p>Puros ejercicios para aplicar y transformar. Directos al grano. Sin vueltas, sin teoría. Solo acción.</p-->
+      </header>
+      <section class="blog-feed" id="blog-feed"></section>
+      <div id="post-container" style="display: none;"></div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="navbar.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const res = await fetch('posts.json');
+        if (!res.ok) throw new Error('Error al cargar los posts');
+        const posts = await res.json();
+
+        // Filtrar posts con label "practica" (string o en array)
+        const practicaPosts = posts.filter(post => 
+          post.label === 'practica' || 
+          (Array.isArray(post.label) && post.label.includes('practica'))
+        );
+
+        const blogFeed = document.getElementById('blog-feed');
+        if (practicaPosts.length === 0) {
+          blogFeed.innerHTML = '<p class="text-center text-gray-600">No hay posts disponibles en esta categoría.</p>';
+          return;
+        }
+
+        blogFeed.innerHTML = practicaPosts.map(post => `
+          <article class="post-preview" data-post="${post.post}">
+            <img src="${post.image}" alt="${post.title}" class="post-image">
+            <div class="post-excerpt">
+              <h2>${post.title}</h2>
+              <p>${post.description}</p>
+              <button class="read-more">Leer más</button>
+            </div>
+          </article>
+        `).join('');
+
+        // Eventos de clic para leer el post
+        document.querySelectorAll('.post-preview').forEach(preview => {
+          preview.addEventListener('click', async (e) => {
+            e.preventDefault();
+
+            const postFile = preview.dataset.post;
+            const postRes = await fetch(postFile);
+            if (!postRes.ok) throw new Error('Post no encontrado');
+            const postHTML = await postRes.text();
+
+            const postContainer = document.getElementById('post-container');
+            blogFeed.style.display = 'none';
+            postContainer.innerHTML = `
+              <button id="back-button-top" class="back-button">← Volver</button>
+              ${postHTML}
+              <button id="back-button-bottom" class="back-button">← Volver</button>
+            `;
+            postContainer.style.display = 'block';
+
+            // Scroll suave
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Volver desde arriba o abajo
+            const volver = () => {
+              postContainer.style.display = 'none';
+              postContainer.innerHTML = '';
+              blogFeed.style.display = 'grid';
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            document.getElementById('back-button-top').addEventListener('click', volver);
+            document.getElementById('back-button-bottom').addEventListener('click', volver);
+          });
+        });
+
+      } catch (error) {
+        console.error('Error al cargar los posts:', error);
+        const blogFeed = document.getElementById('blog-feed');
+        blogFeed.innerHTML = '<p class="text-center text-red-600">Error al cargar los posts. Por favor, intenta de nuevo.</p>';
+      }
+    });
+  </script>
+</body>
+</html>
