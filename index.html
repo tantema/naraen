@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KOMYPE</title>
+  <title>NARAEN</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <!-- Google tag (gtag.js) -->
@@ -193,14 +193,14 @@
 
       // Cargar feeds de Google News
       async function loadNewsFeed() {
-        const rssUrl = 'https://news.google.com/rss/search?q=(peru+AND+(corea+del+sur+OR+hyundai+OR+samsung+OR+posco+dohwa+OR+fame+OR+seman+OR+marina+de+guerra+OR+fap+OR+inversiones+coreanas+OR+cooperaci%C3%B3n+coreana+OR+naval+OR+alianza+estrat%C3%A9gica))&hl=es-419&gl=PE&ceid=PE:es';
+        const rssUrl = 'https://news.google.com/rss/search?q=(espiritualidad+AND+(avances+científicos+OR+ciencia+cuántica+OR+cosmos+OR+consciencia+OR+neurociencia+OR+meditación+OR+conciencia+universal+OR+energía+cuántica+OR+espacio-tiempo+OR+física+cuántica+OR+inteligencia+artificial))&hl=es-419&gl=PE&ceid=PE:es';
         try {
           const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`);
           const data = await response.json();
 
           if (data.status === 'ok' && data.items.length > 0) {
             const sixMonthsAgo = new Date();
-            sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+            sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 8);
 
             const recentItems = data.items
               .filter(item => new Date(item.pubDate) >= sixMonthsAgo)

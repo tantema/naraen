@@ -6,7 +6,7 @@
       "post": "post/decretos.html",
       "label": "practica",
       "charts": [],
-      "visibleInIndex": false
+      "visibleInIndex": true
     },
     {
       "title": "🌱 Sana a Tu Niño Interior",
@@ -15,7 +15,7 @@
       "post": "post/sana-nino-interior.html",
       "label": "practica",
       "charts": [],
-      "visibleInIndex": false
+      "visibleInIndex": true
     },
     {
       "title": "👁️ ¡ATENCIÓN!: El Enfoque: Tu Poder Supremo",
@@ -24,7 +24,7 @@
       "post": "post/atencion.html",
       "label": "practica",
       "charts": [],
-      "visibleInIndex": false
+      "visibleInIndex": true
     },
     
     {
@@ -34,47 +34,10 @@
       "post": "post/gracia.html",
       "label": "practica",
       "charts": [],
-      "visibleInIndex": false
+      "visibleInIndex": true
     },
-    {
-      "title": "Relación entre Corea del Sur y Perú",
-      "description": "Análisis y perspectivas",
-      "image": "images/tanque.jpg",
-      "post": "post/corea2025-04.html",
-      "label": "explora",
-      "charts": []
-    },
-    {
-      "title": "La Mejor Camioneta 4x4 para tu Proyecto en Perú",
-      "description": "Guía comparativa para elegir con inteligencia y proteger tu inversión",
-      "image": "images/toyota-hilux.jpg",
-      "post": "post/pickup.html",
-      "label": "explora",
-      "charts": [
-        {
-          "type": "bar",
-          "id": "pickupChart",
-          "data": {
-            "labels": ["Toyota Hilux", "Nissan Frontier", "Ford Ranger", "Mitsubishi L200 Triton", "Mazda BT-50", "Chevrolet D-Max", "Great Wall Poer", "JAC T8 Pro"],
-            "datasets": [{
-              "label": "Participación de Mercado (%)",
-              "data": [40, 22, 15, 10, 5, 5, 3, 1],
-              "backgroundColor": ["#ff5733", "#33c1ff", "gold", "#2c3e50", "#f39c12", "#8e44ad", "#27ae60", "#e67e22"],
-              "borderColor": ["#c0392b", "#2980b9", "#f39c12", "#34495e", "#f1c40f", "#8e44ad", "#27ae60", "#e67e22"],
-              "borderWidth": 1
-            }]
-          },
-          "options": {
-            "responsive": true,
-            "scales": {
-              "y": {
-                "beginAtZero": true
-              }
-            }
-          }
-        }
-      ]
-    },
+   
+    
     {
       "title": "Tao Te Ching - Capítulo 1",
       "description": "Análisis Actualizado",

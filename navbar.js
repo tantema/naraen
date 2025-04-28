@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
       <header class="main-header">
         <div class="logo-container">
           <img src="images/colibri-logo.jpg" alt="Logo Tantema" class="logo">
-          <a href="index.html" class="site-title">KOMYPE</a>
+          <a href="index.html" class="site-title">NARAEN</a>
         </div>
         <div class="slogan-container">
-  <span class="slogan">Korea & Peru  |  Connecting Business Growth</span>
+  <span class="slogan">NADA | REALIDAD |  ETERNO</span>
 </div>
 
         <div class="menu-toggle">
