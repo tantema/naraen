@@ -796,7 +796,7 @@ main ul li ol {
 .slogan {
   font-family: 'Roboto', sans-serif; /* Mismo tipo de fuente, pero diferente peso */
   font-weight: 300; /* Ligero */
-  font-size: 18px; /* Un tamaño más pequeño */
+  font-size: 15px; /* Un tamaño más pequeño */
   color: #dcdcdc; /* Color plateado sutil */
 
 
