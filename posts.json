@@ -1,4 +1,13 @@
 [
+  {
+    "title": "Mejorar expresión y comprensión",
+    "description": "Una guía práctica para desarrollar el lenguaje y fortalecer la comprensión en casa, paso a paso....",
+    "image": "images/expresar.jpg",
+    "post": "post/comprension.html",
+    "label": "practica",
+    "charts": [],
+    "visibleInIndex": true
+  },
     {
       "title": "🔱 Decreto Supremo de Prosperidad",
       "description": "Todo es un portal hacia lo infinito: Cada palabra, pensamiento y acción redefine la realidad...",
