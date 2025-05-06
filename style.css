@@ -83,9 +83,9 @@ a:hover {
 
 /* Contenido principal */
 main {
-  max-width: 1200px; /* Ancho estándar para PC */
-  margin: 70px auto 20px; /* Centrado con márgenes laterales automáticos */
-  padding: 15px;
+  max-width: 100%;
+  margin: 70px 0 20px;
+  padding: 0;
   background: var(--main-bg);
   border-radius: 0;
   box-shadow: none;
@@ -205,15 +205,20 @@ main ul li ol {
 .menu a {
   font-weight: 500;
 }
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
 
 /* Blog feed */
 .blog-feed {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); /* Múltiples columnas en PC */
-  gap: 25px;
-  margin: 15px auto; /* Centrado */
-  width: 100%; /* Respeta el ancho de main */
-  max-width: 1200px; /* Limita al ancho estándar */
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+  width: 100%;
   justify-content: center;
 }
 
@@ -224,7 +229,7 @@ main ul li ol {
   box-shadow: var(--shadow-light);
   transition: all 0.3s ease;
   cursor: pointer;
-  max-width: 280px;
+  width: 100%;
 }
 
 .post-preview:hover {
@@ -503,18 +508,13 @@ main ul li ol {
   }
 
   main {
-    max-width: 100%; /* Ancho completo en móviles */
-    margin: 60px 0 20px; /* Sin márgenes laterales */
-    padding: 10px;
+    max-width: 100%;
+    margin: 60px 0 20px;
+    padding: 5px;
     width: 100%;
   }
 
-  .blog-feed {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 10px;
-    margin: 10px 0;
-    max-width: 100%;
-  }
+
 
   .menu-toggle {
     display: block;
@@ -599,11 +599,7 @@ main ul li ol {
     padding: 8px;
     width: 100%;
   }
-  .blog-feed {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Ajuste para móviles */
-    gap: 8px;
-    margin: 5px 0;
-  }
+ 
   .post-header {
     padding: 8px;
     margin: 5px 0;
@@ -675,11 +671,6 @@ main ul li ol {
     width: 100%;
   }
 
-  .blog-feed {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 8px;
-    margin: 5px 0;
-  }
 
   .nav-container {
     width: 180px;
